@@ -1,0 +1,52 @@
+@mixin btn($clr: black, $bg: white) {
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 0;
+    padding: 0.5em 1em;
+    color: $clr;
+    background-color: $bg;
+  
+    &:hover,
+    &:focus {
+      background: lightblue;
+    }
+  }
+  
+  section {
+    margin-top: 4rem;
+  }
+
+  .btn {
+    @include btn();
+  }
+
+  html {
+    color-scheme: dark;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+  }
+
+  .nav {
+    &__list {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    &__link {
+        text-decoration: none;
+    
+        &:where(:hover, :focus) {
+          color: lightblue;
+        }
+      }
+
+      &__login {
+        @include btn(white, royalblue);
+      }
+    }
+
+    section {
+        margin-top: 4rem;
+      }
